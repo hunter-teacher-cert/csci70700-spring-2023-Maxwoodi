@@ -1,8 +1,16 @@
 
+
+Replit Link:
+https://replit.com/@mecpsTealsJava/Demo-Flask-Project#main.py
+
+Live Pages:
+
 https://yearwoodwebsitea.mecpstealsjava.repl.co/front_demo
 
-
 https://yearwoodwebsitea.mecpstealsjava.repl.co/about
+
+
+
 
 
 * Instructions
