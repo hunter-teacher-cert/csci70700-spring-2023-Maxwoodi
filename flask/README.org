@@ -2,7 +2,7 @@
 * Flask Assignment # 2
 
 Replit Link With Code:
-https://replit.com/@mecpsTealsJava/YearwoodMaxwell-Flask-2#templates/layout.html
+https://replit.com/@mecpsTealsJava/YearwoodMaxwell-Flask-2#main.py
 
 Live Pages:
 https://yearwoodmaxwell-flask-2.mecpstealsjava.repl.co/login
