@@ -1,0 +1,68 @@
+﻿section        .text
+        global _start       ;must be declared for using gcc
+_start:                 ;tell linker entry point
+
+
+     ; Displays message " What is your name?'"
+        mov        edx, len1    ;message length
+        mov        ecx, msg    ;message to write
+        mov        ebx, 1            ;file descriptor (stdout)
+        mov        eax, 4            ;system call number (sys_write)
+        int        0x80        ;call kernel
+        
+        
+        ; Taking name input and storing it in name_V"
+        mov        edx, 255    ;message length
+        mov        ecx, name_V ;message to write
+        mov        ebx, 0            ;file descriptor (stdout)
+        mov        eax, 3            ;system call number (sys_write)
+        int        0x80        ;call kernel
+        
+        
+        ; Displays hello part of message greeting
+        mov        edx, hello_len    ;message length
+        mov        ecx, hello    ;message to write
+        mov        ebx, 1            ;file descriptor (stdout)
+        mov        eax, 4            ;system call number (sys_write)
+        int        0x80        ;call kernel
+        
+        
+        ; Displays full message greeting as a constant
+        mov        edx, 255    ;message length
+        mov        ecx, name_V    ;message to write
+        mov        ebx, 1            ;file descriptor (stdout)
+        mov        eax, 4            ;system call number (sys_write)
+        int        0x80        ;call kernel
+        
+        
+        ; Exit 
+        mov        eax, 1            ;system call number (sys_exit)
+        mov ebx,0       ; 0 means normal exit
+        int        0x80        ;call kernel
+
+
+section        .data
+
+
+msg        db        'What is your name?  ',0xa        ;our dear string
+len1        equ        $ - msg                        ;length of our dear string
+hello db 'Hell0 '    ; message to be combined with name
+hello_len equ $ - hello     ; length of hello
+
+
+
+
+section .bss
+name_V   resb 255
+
+
+
+
+
+
+;DISPLAY AT TERMINAL 
+
+
+;What is your name?  
+;Maxwell Yearwood
+;Hell0 Maxwell Yearwood
